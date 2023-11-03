@@ -1,4 +1,5 @@
 class MarsRover:
+    # defining class variables
     def __init__(self, grid, obstacles):
         self.grid = grid
         self.updated_grid = tuple(x - 1 for x in grid)
@@ -8,6 +9,7 @@ class MarsRover:
         self.direction = 'N'
         self.obstacle_encountered = False
 
+    # defining rotate left function based on different directions
     def rotate_left(self):
         if self.direction == 'N':
             self.direction = 'W'
@@ -18,6 +20,7 @@ class MarsRover:
         elif self.direction == 'W':
             self.direction = 'S'
 
+    # defining rotate right function based on different directions
     def rotate_right(self):
         if self.direction == 'N':
             self.direction = 'E'
@@ -28,6 +31,7 @@ class MarsRover:
         elif self.direction == 'W':
             self.direction = 'N'
 
+    # defining move forward function
     def move_forward(self):
         new_x, new_y = self.x, self.y
         if self.direction == 'N':
@@ -54,7 +58,8 @@ class MarsRover:
                 new_y = 0
 
         self.x, self.y = new_x, new_y
-
+    
+    # defining move backward function
     def move_backward(self):
         new_x, new_y = self.x, self.y
         if self.direction == 'N':
@@ -82,7 +87,7 @@ class MarsRover:
 
         self.x, self.y = new_x, new_y
 
-    
+    # to check if the next position is an obstacle
     def is_obstacle(self, x, y):
         if (x, y) in self.obstacles:
             self.obstacle_encountered = True
@@ -90,6 +95,7 @@ class MarsRover:
             self.obstacle_encountered = False
         return self.obstacle_encountered
 
+    # to check if the next move is valid (if the rover reaches grid borders)
     def is_not_valid(self, x, y):
         x_max, y_max = self.updated_grid 
         if x < 0:
@@ -102,6 +108,7 @@ class MarsRover:
             self.y = 0
         return True
     
+    # defining commands function 
     def execute_commands(self, commands):
         for command in commands:
             if command == 'L':
@@ -113,6 +120,7 @@ class MarsRover:
             elif command == 'B':
                 self.move_backward()
 
+    # printing the current position 
     def get_position(self):
         if self.obstacle_encountered:
             print(f'O:{self.x}:{self.y}:{self.direction}')
