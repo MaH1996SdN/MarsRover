@@ -155,7 +155,7 @@ def read_input_file(input_file):
                 recording_commands = True
         
         # Split each command series into individual characters
-        command_series_list = [line for line in commands_lines]     
+        command_series_list = [line for line in commands_lines]   
         return grid, obstacles, command_series_list
     
 
@@ -172,9 +172,7 @@ for command_series in command_series_list:
         rover.x, rover.y, rover.direction = initial_position
         
     rover.execute_commands(commands_list)
-        
     # Get the position and print it
     position = rover.get_position()
-
     # Save the position for the next iteration
     initial_position = (rover.x, rover.y, rover.direction)
