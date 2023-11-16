@@ -12,9 +12,8 @@ for command_series in command_series_list:
         
     if initial_position:
         rover.x, rover.y, rover.direction = initial_position
-        
+       
     rover.execute_commands(commands_list)
-    # Get the position and print it
-    position = rover.get_position()
+    position = rover.print_current_position()
     # Save the position for the next iteration
     initial_position = (rover.x, rover.y, rover.direction)

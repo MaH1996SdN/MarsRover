@@ -120,8 +120,7 @@ class MarsRover:
             elif command == 'B':
                 self.move_backward()
 
-    # printing the current position 
-    def get_position(self):
+    def print_current_position(self):
         if self.obstacle_encountered:
             print(f'O:{self.x}:{self.y}:{self.direction}')
         else:
