@@ -159,7 +159,7 @@ def read_input_file(input_file):
         return grid, obstacles, command_series_list
     
 
-grid, obstacles, command_series_list = read_input_file("C:\\Users\\Mahsa\\Documents\\input.txt")
+grid, obstacles, command_series_list = read_input_file("input.txt")
 initial_position = (0, 0,'N')
  # Initialize the Mars Rover with the initial position or (0, 0, 'N') for the first iteration
 rover = MarsRover(grid, obstacles) 
