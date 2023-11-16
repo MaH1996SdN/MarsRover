@@ -1,0 +1,9 @@
+Grid
+Size -2 2
+Obstacle 1 1
+Commands
+RFLF
+LFF
+B
+LF
+LF
