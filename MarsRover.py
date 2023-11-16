@@ -1,12 +1,10 @@
 class MarsRover:
     # defining class variables
-    def __init__(self, grid, obstacles):
+    def __init__(self, grid, obstacles, initial_position):
         self.grid = grid
         self.updated_grid = tuple(x - 1 for x in grid)
         self.obstacles = obstacles
-        self.x = 0
-        self.y = 0
-        self.direction = 'N'
+        self.x, self.y, self.direction = initial_position
         self.obstacle_encountered = False
 
     # defining rotate left function based on different directions
